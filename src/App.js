@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+
+import './App.scss';
+import Search from './Search';
+import Counters from './Counters';
 
 function App() {
+  const [startAddress, setStartAddress] = useState('A');
+  const [endAddress, setEndAddress] = useState('B');
+
+  function handleSearchInputSubmission (type, value) {
+    if (type === 'start') setStartAddress(value);
+    if (type === 'end') setEndAddress(value);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section id="right">
+
+      </section>
+      <section id="left">
+        <div className="mb-1">
+          <Search
+            startAddress={startAddress}
+            endAddress={endAddress}
+            onInputSubmission={handleSearchInputSubmission}
+          />
+        </div>
+        <div className="mb-1">
+          <Counters/>
+        </div>
+      </section>
     </div>
   );
 }
