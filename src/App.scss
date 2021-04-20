@@ -6,12 +6,33 @@ section#left {
     width: 45%;
     height: calc(100vh - 2rem);
     padding: 1rem;
-    box-shadow: 0px 0px 30px rgba(0,0,0,0.25);
     float: right;
+    z-index: 1;
 }
 section#right {
-    width: calc(55% - 4rem);
-    height: calc(100vh - 2rem);
-    padding: 1rem;
+    width: calc(55% - 2rem);
+    height: calc(100vh);
     float: right;
+    z-index: 0;
 }
+
+.map-container {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+.sidebar {
+    background-color: rgba(35, 55, 75, 0.9);
+    color: #ffffff;
+    padding: 6px 12px;
+    font: 15px/24px monospace;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 12px;
+    border-radius: 4px;
+    }

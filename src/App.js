@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './App.scss';
 import Search from './Search';
 import Counters from './Counters';
+import Map from './Map';
 
 function App() {
   const [startAddress, setStartAddress] = useState('A');
@@ -16,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <section id="right">
-
+        <Map/>
       </section>
       <section id="left">
         <div className="mb-1">
